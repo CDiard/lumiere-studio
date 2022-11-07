@@ -34,7 +34,7 @@ header {
 
 		&:not([disabled]):active + .toggle-track,
 		&:not([disabled]):focus + .toggle-track {
-			border: 2px solid $dark;
+			border: 0;
 			box-shadow: none;
 		}
 
@@ -44,25 +44,24 @@ header {
 		}
 	}
 	.toggle-track {
-		height: 35px;
+		height: 34px;
 		width: 67px;
 		display: flex;
 		position: relative;
 		background: $dark;
-		border: 2px solid $dark;
 		border-radius: 100px;
 		cursor: pointer;
 	}
 
 	.toggle-indicator {
-		height: 31px;
-		width: 31px;
+		height: 30px;
+		width: 30px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: 2px;
+		left: 2px;
 		background: $light;
 		border-radius: 24px;
 		transition: 300ms;
@@ -83,7 +82,7 @@ header {
 	}
 	.toggle-input:checked + .toggle-track .toggle-indicator {
 		background: $light;
-		transform: translateX(35px);
+		transform: translateX(33px);
 
 		.checkMark {
 			opacity: 1;
