@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 header .toggle {
   align-items: center;
   border-radius: 100px;
@@ -19,7 +24,7 @@ header .toggle-input {
   white-space: nowrap;
 }
 header .toggle-input:not([disabled]):active + .toggle-track, header .toggle-input:not([disabled]):focus + .toggle-track {
-  border: 4px solid #A5C9CA;
+  border: 3px solid #A5C9CA;
   box-shadow: none;
 }
 header .toggle-input:disabled + .toggle-track {
