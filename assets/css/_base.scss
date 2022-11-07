@@ -1,6 +1,9 @@
 * {
 	margin: 0;
 	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 $dark: #A5C9CA;
@@ -31,7 +34,7 @@ header {
 
 		&:not([disabled]):active + .toggle-track,
 		&:not([disabled]):focus + .toggle-track {
-			border: 3px solid $dark;
+			border: 2px solid $dark;
 			box-shadow: none;
 		}
 
@@ -41,12 +44,12 @@ header {
 		}
 	}
 	.toggle-track {
-		height: 31px;
+		height: 35px;
 		width: 67px;
 		display: flex;
 		position: relative;
 		background: $dark;
-		border: 3px solid $dark;
+		border: 2px solid $dark;
 		border-radius: 100px;
 		cursor: pointer;
 	}

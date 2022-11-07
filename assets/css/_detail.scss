@@ -1,0 +1,14 @@
+header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+
+  .bouton-retour {
+    width: 26px;
+    height: auto;
+  }
+}
