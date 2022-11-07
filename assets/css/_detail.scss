@@ -1,5 +1,5 @@
 body {
-  background-color: #2C3333;
+  background-color: $dark;
 }
 
 header {
@@ -22,14 +22,14 @@ header {
     outline: 0;
     border-bottom: 2px solid #A5C9CA;
     background-color: transparent;
-    font-family: 'Roboto', sans-serif;
+    @include fontRoboto;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #FFFFFF;
+    color: $light;
 
     &::placeholder {
-      font-family: 'Roboto', sans-serif;
+      @include fontRoboto;
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;

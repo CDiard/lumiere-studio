@@ -6,7 +6,8 @@
 	box-sizing: border-box;
 }
 
-$dark: #A5C9CA;
+$lightblue: #A5C9CA;
+$dark: #2C3333;
 $light: #FFFFFF;
 
 header {
@@ -48,7 +49,7 @@ header {
 		width: 67px;
 		display: flex;
 		position: relative;
-		background: $dark;
+		background: $lightblue;
 		border-radius: 100px;
 		cursor: pointer;
 	}
@@ -72,7 +73,7 @@ header {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-family: 'Roboto', sans-serif;
+		@include fontRoboto;
 		font-style: normal;
 		font-weight: 400;
 		font-size: 12px;
