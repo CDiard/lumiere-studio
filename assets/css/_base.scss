@@ -6,9 +6,16 @@
 	box-sizing: border-box;
 }
 
-$lightblue: #A5C9CA;
-$dark: #2C3333;
-$light: #FFFFFF;
+$lightblue: #a5c9ca;
+$dark: #2c3333;
+$light: #ffffff;
+
+body {
+	background-color: $bg-color;
+	font-family: $font;
+	margin: 0;
+	padding: 0;
+}
 
 header {
 	//Sélecteur on off
@@ -79,7 +86,7 @@ header {
 		font-size: 12px;
 		line-height: 14px;
 		text-align: center;
-		color: #A5C9CA;
+		color: #a5c9ca;
 	}
 	.toggle-input:checked + .toggle-track .toggle-indicator {
 		background: $light;

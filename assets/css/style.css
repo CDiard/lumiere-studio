@@ -1,9 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #2c3333;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header .toggle {
@@ -12,6 +17,8 @@ header .toggle {
   display: flex;
   font-weight: 700;
   margin-bottom: 16px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
   width: min-content;
 }
 header .toggle:last-of-type {
@@ -21,7 +28,8 @@ header .toggle-input {
   height: 1px;
   width: 1px;
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
@@ -39,7 +47,7 @@ header .toggle-track {
   width: 67px;
   display: flex;
   position: relative;
-  background: #A5C9CA;
+  background: #a5c9ca;
   border-radius: 100px;
   cursor: pointer;
 }
@@ -52,7 +60,7 @@ header .toggle-indicator {
   position: absolute;
   top: 2px;
   left: 2px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 24px;
   transition: 300ms;
 }
@@ -68,10 +76,10 @@ header .check-state {
   font-size: 12px;
   line-height: 14px;
   text-align: center;
-  color: #A5C9CA;
+  color: #a5c9ca;
 }
 header .toggle-input:checked + .toggle-track .toggle-indicator {
-  background: #FFFFFF;
+  background: #ffffff;
   transform: translateX(33px);
 }
 header .toggle-input:checked + .toggle-track .toggle-indicator .checkMark {
@@ -85,7 +93,7 @@ header .toggle-input:checked + .toggle-track .toggle-indicator .checkMark {
 }
 
 body {
-  background-color: #2C3333;
+  background-color: #2c3333;
 }
 
 header {
@@ -112,7 +120,21 @@ header .name-modif-light {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #ffffff;
+}
+header .name-modif-light::-moz-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.6509803922);
+}
+header .name-modif-light:-ms-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.6509803922);
 }
 header .name-modif-light::placeholder {
   font-family: "Roboto", sans-serif;
@@ -122,4 +144,31 @@ header .name-modif-light::placeholder {
   color: rgba(255, 255, 255, 0.6509803922);
 }
 
-/*# sourceMappingURL=style.css.map */
+h1 {
+  color: #a5c9ca;
+  margin: 0;
+}
+
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-main__left {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-add {
+  background-color: #a5c9ca;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 2.5rem;
+  text-decoration: none;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
