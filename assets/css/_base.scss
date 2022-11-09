@@ -10,6 +10,13 @@ $speed: 300ms;
 $track-background: $dark;
 $focus-ring: 0px 0px 0px 2px $light;
 
+body {
+	background-color: $bg-color;
+	font-family: $font;
+	margin: 0;
+	padding: 0;
+}
+
 .toggle {
 	align-items: center;
 	border-radius: 100px;
