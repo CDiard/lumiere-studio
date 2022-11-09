@@ -135,10 +135,27 @@ header .name-modif-light::placeholder {
   color: rgba(255, 255, 255, 0.6509803922);
 }
 
+.selection-couleur {
+  margin: 50px 0 0 0;
+}
 .selection-couleur .picker-couleur {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+}
+.selection-couleur .picker-couleur #pickerColor .IroWheel {
+  margin-left: 20px !important;
+}
+.selection-couleur .picker-couleur #pickerColor .IroSlider {
+  margin-left: 20px !important;
+}
+.selection-couleur .picker-couleur #pickerColor .IroSlider:first-child {
+  margin-left: 0 !important;
+}
+.selection-couleur .picker-couleur #pickerColor .IroSlider:last-child {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  margin-top: 50px !important;
 }
 
 h1 {

@@ -40,9 +40,28 @@ header {
 }
 
 .selection-couleur {
+  margin: 50px 0 0 0;
+
   .picker-couleur {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+
+    #pickerColor {
+      .IroWheel {
+        margin-left: 20px !important;
+      }
+      .IroSlider {
+        margin-left: 20px !important;
+      }
+      .IroSlider:first-child {
+        margin-left: 0 !important;
+      }
+      .IroSlider:last-child {
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: 50px !important;
+      }
+    }
   }
 }
