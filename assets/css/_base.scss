@@ -17,89 +17,87 @@ body {
 	padding: 0;
 }
 
-header {
-	//Sélecteur on off
-	.toggle {
-		align-items: center;
-		border-radius: 100px;
-		display: flex;
-		font-weight: 700;
-		margin-bottom: 16px;
-		width: min-content;
+//Sélecteur on off
+.toggle {
+	align-items: center;
+	border-radius: 100px;
+	display: flex;
+	font-weight: 700;
+	margin-bottom: 16px;
+	width: min-content;
 
-		&:last-of-type {
-			margin: 0;
-		}
+	&:last-of-type {
+		margin: 0;
 	}
-	.toggle-input {
-		height: 1px;
-		width: 1px;
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
+}
+.toggle-input {
+	height: 1px;
+	width: 1px;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
 
-		&:not([disabled]):active + .toggle-track,
-		&:not([disabled]):focus + .toggle-track {
-			border: 0;
-			box-shadow: none;
-		}
-
-		&:disabled + .toggle-track {
-			cursor: not-allowed;
-			opacity: 0.7;
-		}
+	&:not([disabled]):active + .toggle-track,
+	&:not([disabled]):focus + .toggle-track {
+		border: 0;
+		box-shadow: none;
 	}
+
+	&:disabled + .toggle-track {
+		cursor: not-allowed;
+		opacity: 0.7;
+	}
+}
+.toggle-track {
+	height: 34px;
+	width: 67px;
+	display: flex;
+	position: relative;
+	background: $lightblue;
+	border-radius: 100px;
+	cursor: pointer;
+}
+
+.toggle-indicator {
+	height: 30px;
+	width: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	background: $light;
+	border-radius: 24px;
+	transition: 300ms;
+}
+.check-state {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include fontRoboto;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	color: #a5c9ca;
+}
+.toggle-input:checked + .toggle-track .toggle-indicator {
+	background: $light;
+	transform: translateX(33px);
+
+	.checkMark {
+		opacity: 1;
+		transition: opacity 300ms ease-in-out;
+	}
+}
+@media screen and (-ms-high-contrast: active) {
 	.toggle-track {
-		height: 34px;
-		width: 67px;
-		display: flex;
-		position: relative;
-		background: $lightblue;
-		border-radius: 100px;
-		cursor: pointer;
-	}
-
-	.toggle-indicator {
-		height: 30px;
-		width: 30px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		top: 2px;
-		left: 2px;
-		background: $light;
-		border-radius: 24px;
-		transition: 300ms;
-	}
-	.check-state {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		@include fontRoboto;
-		font-style: normal;
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 14px;
-		text-align: center;
-		color: #a5c9ca;
-	}
-	.toggle-input:checked + .toggle-track .toggle-indicator {
-		background: $light;
-		transform: translateX(33px);
-
-		.checkMark {
-			opacity: 1;
-			transition: opacity 300ms ease-in-out;
-		}
-	}
-	@media screen and (-ms-high-contrast: active) {
-		.toggle-track {
-			border-radius: 0;
-		}
+		border-radius: 0;
 	}
 }

@@ -6,4 +6,7 @@ $(document).ready(function() {
         $('header .check-state-on').toggle();
         $('header .check-state-off').toggle();
     })
+
+    //Iro.js
+    var colorPicker = new iro.ColorPicker('#pickerColor');
 });
