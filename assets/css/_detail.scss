@@ -1,0 +1,39 @@
+body {
+  background-color: $dark;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+
+  .bouton-retour {
+    width: 26px;
+    height: auto;
+  }
+  .name-modif-light {
+    width: 170px;
+    height: 24px;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid #A5C9CA;
+    background-color: transparent;
+    @include fontRoboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: $light;
+
+    &::placeholder {
+      @include fontRoboto;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FFFFFFA6;
+    }
+  }
+}
