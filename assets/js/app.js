@@ -54,6 +54,7 @@ $(document).ready(function() {
         width: 300,
         color: "#ffffff",
         layoutDirection: 'vertical',
+        wheelDirection: 'clockwise',
         layout: [
             {
                 component: iro.ui.Slider,
@@ -70,11 +71,10 @@ $(document).ready(function() {
 
     //Affichage code hexa
     reloadColor();
-    $("#pickerColor").mousemove(function() {
+    colorPicker.on('color:change', function() {
         reloadColor();
     });
-
-    $("#pickerIntensity").mousemove(function() {
+    intensityPicker.on('color:change', function() {
         reloadColor();
     });
 

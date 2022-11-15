@@ -1,3 +1,16 @@
+@mixin pictoSelectColor($url) {
+  content: '';
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
 body {
   background-color: $dark;
 }
@@ -61,11 +74,34 @@ header {
         margin-right: auto !important;
         margin-left: auto !important;
         margin-top: 50px !important;
+
+        &::before {
+          @include pictoSelectColor("../img/svg/sun.svg");
+          left: -10px;
+          transform: translate(-100%, -50%);
+        }
+        &::after {
+          @include pictoSelectColor("../img/svg/moon.svg");
+          right: -10px;
+          transform: translate(100%, -50%);
+        }
       }
     }
 
     #pickerIntensity {
       margin: 25px 0 0 0;
+      position: relative;
+
+      &::before {
+        @include pictoSelectColor("../img/svg/flash_off.svg");
+        left: -10px;
+        transform: translate(-100%, -50%);
+      }
+      &::after {
+        @include pictoSelectColor("../img/svg/flash_on.svg");
+        right: -10px;
+        transform: translate(100%, -50%);
+      }
     }
 
     .code-couleur {
