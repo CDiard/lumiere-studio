@@ -172,6 +172,103 @@ header .name-modif-light::placeholder {
   margin-left: auto !important;
   margin-top: 50px !important;
 }
+.selection-couleur .picker-couleur #pickerColor .IroSlider:last-child::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  background-image: url("../img/svg/sun.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  left: -10px;
+  transform: translate(-100%, -50%);
+}
+.selection-couleur .picker-couleur #pickerColor .IroSlider:last-child::after {
+  content: "";
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  background-image: url("../img/svg/moon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  right: -10px;
+  transform: translate(100%, -50%);
+}
+.selection-couleur .picker-couleur #pickerIntensity {
+  margin: 25px 0 0 0;
+  position: relative;
+}
+.selection-couleur .picker-couleur #pickerIntensity::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  background-image: url("../img/svg/flash_off.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  left: -10px;
+  transform: translate(-100%, -50%);
+}
+.selection-couleur .picker-couleur #pickerIntensity::after {
+  content: "";
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  background-image: url("../img/svg/flash_on.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  right: -10px;
+  transform: translate(100%, -50%);
+}
+.selection-couleur .picker-couleur .code-couleur {
+  width: 145px;
+  margin: 25px 0 0 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 0 5px 0 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.selection-couleur .picker-couleur .code-couleur legend {
+  margin: 0 0 0 6px;
+  padding: 0 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+.selection-couleur .picker-couleur .code-couleur label {
+  display: none;
+}
+.selection-couleur .picker-couleur .code-couleur input {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0 0 5px 0;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
 
 h1 {
   color: #a5c9ca;
