@@ -11,6 +11,17 @@ $(document).ready(function() {
     function reloadColor() {
         var hex = colorPicker.color.hexString;
         $('.codeColor .inputColor').val(hex);
+        // var red = colorPicker.color.red; -> 255
+        // var green = colorPicker.color.green; -> 255
+        // var blue = colorPicker.color.green; -> 255
+        var intensity = intensityPicker.color.value;// -> 100
+        
+        var intensity255 = (intensity * 255) / 100;
+
+        fetch("http://localhost:8080/ajuster/1/" + colorPicker.color.red);
+        fetch("http://localhost:8080/ajuster/2/" + colorPicker.color.green);
+        fetch("http://localhost:8080/ajuster/3/" + colorPicker.color.blue);
+        fetch("http://localhost:8080/ajuster/5/" + intensity255);
     }
 
     //Iro.js
@@ -71,6 +82,10 @@ $(document).ready(function() {
     //Affichage code hexa
     reloadColor();
     $("#pickerColor").mousemove(function() {
+        reloadColor();
+    });
+
+    $("#pickerIntensity").mousemove(function() {
         reloadColor();
     });
 });
