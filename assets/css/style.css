@@ -157,6 +157,9 @@ header .name-modif-light::placeholder {
   margin-left: auto !important;
   margin-top: 50px !important;
 }
+.selection-couleur .picker-couleur #pickerIntensity {
+  margin: 25px 0 0 0;
+}
 
 h1 {
   color: #a5c9ca;
