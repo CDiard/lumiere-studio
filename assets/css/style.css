@@ -1,8 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -19,6 +17,8 @@ body {
   display: flex;
   font-weight: 700;
   margin-bottom: 16px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
   width: min-content;
 }
 .toggle:last-of-type {
@@ -29,7 +29,8 @@ body {
   height: 1px;
   width: 1px;
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
@@ -127,6 +128,20 @@ header .name-modif-light {
   line-height: 19px;
   color: #ffffff;
 }
+header .name-modif-light::-moz-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.6509803922);
+}
+header .name-modif-light:-ms-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.6509803922);
+}
 header .name-modif-light::placeholder {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -187,4 +202,45 @@ h1 {
   align-items: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+.carte {
+  background-color: #d9d9d9;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.slick-track {
+  padding-block: 2rem;
+}
+
+.slider__element {
+  display: block;
+  background-color: #d9d9d9;
+  width: 33vw;
+  margin-inline: 1.5rem;
+  border-radius: 1rem;
+  padding: 1rem 0;
+  transition: transform 0.5s;
+}
+
+.slick-center {
+  transform: scale(1.25);
+}
+
+.light-icon {
+  width: 75%;
+  margin-inline: auto;
+}
+
+.light-name {
+  text-align: center;
+}
+
+.bottom-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
