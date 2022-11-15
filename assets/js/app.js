@@ -73,4 +73,10 @@ $(document).ready(function() {
     $("#pickerColor").mousemove(function() {
         reloadColor();
     });
+
+
+    var red = colorPicker.color.red;
+    var green = colorPicker.color.green;
+    var blue = colorPicker.color.green;
+    var intensity = intensityPicker.color.value;
 });
