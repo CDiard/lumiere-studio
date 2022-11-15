@@ -67,7 +67,16 @@ $(document).ready(function() {
     });
 
     //Pour le responsive
-    //colorPicker.resize(200);
+    $(window).resize(function() {
+        var width = $(window).width();
+        if (width < 500){
+            colorPicker.resize(220);
+            intensityPicker.resize(220);
+        } else {
+            colorPicker.resize(300);
+            intensityPicker.resize(300);
+        }
+    });
 
     //Affichage code hexa
     reloadColor();
