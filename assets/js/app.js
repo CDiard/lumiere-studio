@@ -15,7 +15,7 @@ $(document).ready(function() {
         // var green = colorPicker.color.green; -> 255
         // var blue = colorPicker.color.green; -> 255
         var intensity = intensityPicker.color.value;// -> 100
-        
+
         var intensity255 = (intensity * 255) / 100;
 
         fetch("http://localhost:8080/ajuster/1/" + colorPicker.color.red);
