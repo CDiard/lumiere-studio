@@ -10,7 +10,7 @@ $(document).ready(function() {
     //Fonction actualisation
     function reloadColor() {
         var hex = colorPicker.color.hexString;
-        $('.codeColor .inputColor').val(hex);
+        $('.code-couleur .input-couleur').val(hex);
     }
 
     //Iro.js
@@ -71,6 +71,16 @@ $(document).ready(function() {
     //Affichage code hexa
     reloadColor();
     $("#pickerColor").mousemove(function() {
+        reloadColor();
+    });
+
+    $("#pickerIntensity").mousemove(function() {
+        reloadColor();
+    });
+
+    $('.code-couleur input[type=text]').change(function() {
+        var hexChange = $('.code-couleur .input-couleur').val();
+        colorPicker.color.hexString = hexChange;
         reloadColor();
     });
 

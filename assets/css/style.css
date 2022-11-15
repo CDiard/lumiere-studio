@@ -160,6 +160,43 @@ header .name-modif-light::placeholder {
 .selection-couleur .picker-couleur #pickerIntensity {
   margin: 25px 0 0 0;
 }
+.selection-couleur .picker-couleur .code-couleur {
+  width: 145px;
+  margin: 25px 0 0 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 0 5px 0 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.selection-couleur .picker-couleur .code-couleur legend {
+  margin: 0 0 0 6px;
+  padding: 0 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+.selection-couleur .picker-couleur .code-couleur label {
+  display: none;
+}
+.selection-couleur .picker-couleur .code-couleur input {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0 0 5px 0;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
 
 h1 {
   color: #a5c9ca;

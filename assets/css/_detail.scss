@@ -67,5 +67,44 @@ header {
     #pickerIntensity {
       margin: 25px 0 0 0;
     }
+
+    .code-couleur {
+      width: 145px;
+      margin: 25px 0 0 0;
+      border: 2px solid #FFFFFF;
+      border-radius: 10px;
+      background-color: transparent;
+      padding: 0 5px 0 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      legend {
+        margin: 0 0 0 6px;
+        padding: 0 5px;
+        @include fontRoboto;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #FFFFFF;
+      }
+      label {
+        display: none;
+      }
+      input {
+        width: 100%;
+        @include fontRoboto;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0 0 5px 0;
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+      }
+    }
   }
 }
