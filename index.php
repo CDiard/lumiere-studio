@@ -44,7 +44,7 @@
 
 		<div class="bottom-wrapper">
 			<div class="slider">
-				<a class="slider__element" href="detail.html?name=test">
+				<a class="slider__element" href="detail.php?name=test">
 					<img
 						class="light-icon"
 						src="assets/img/svg/noun-light.svg"
@@ -52,7 +52,7 @@
 					/>
 					<p class="light-name">Nom</p>
 				</a>
-				<a class="slider__element" href="detail.html?name=test">
+				<a class="slider__element" href="detail.php?name=test">
 					<img
 						class="light-icon"
 						src="assets/img/svg/noun-light.svg"
@@ -60,7 +60,7 @@
 					/>
 					<p class="light-name">Nom</p>
 				</a>
-				<a class="slider__element" href="detail.html?name=test">
+				<a class="slider__element" href="detail.php?name=test">
 					<img
 						class="light-icon"
 						src="assets/img/svg/noun-light.svg"
@@ -68,7 +68,7 @@
 					/>
 					<p class="light-name">Nom</p>
 				</a>
-				<a class="slider__element" href="detail.html?name=test">
+				<a class="slider__element" href="detail.php?name=test">
 					<img
 						class="light-icon"
 						src="assets/img/svg/noun-light.svg"
