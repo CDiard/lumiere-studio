@@ -25,6 +25,7 @@ body {
 	font-weight: 700;
 	margin-bottom: 16px;
 	width: min-content;
+	user-select: none;
 
 	&:last-of-type {
 		margin: 0;
