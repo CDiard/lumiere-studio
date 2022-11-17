@@ -61,6 +61,20 @@ header {
     align-items: center;
 
     #pickerColor {
+      &.disable-picker {
+        position: relative;
+        filter: blur(5px) saturate(55%);
+      }
+      &.disable-picker::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        cursor: not-allowed;
+      }
       .IroWheel {
         margin-left: 20px !important;
       }
@@ -116,6 +130,15 @@ header {
       justify-content: space-between;
       align-items: center;
 
+      &.disable-picker {
+        opacity: 0;
+        height: 50px;
+
+        input {
+          display: none;
+
+        }
+      }
       legend {
         margin: 0 0 0 6px;
         padding: 0 5px;

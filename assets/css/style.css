@@ -144,6 +144,20 @@ header .name-modif-light::placeholder {
   flex-direction: column;
   align-items: center;
 }
+.selection-couleur .picker-couleur #pickerColor.disable-picker {
+  position: relative;
+  filter: blur(5px) saturate(55%);
+}
+.selection-couleur .picker-couleur #pickerColor.disable-picker::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: not-allowed;
+}
 .selection-couleur .picker-couleur #pickerColor .IroWheel {
   margin-left: 20px !important;
 }
@@ -229,6 +243,13 @@ header .name-modif-light::placeholder {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.selection-couleur .picker-couleur .code-couleur.disable-picker {
+  opacity: 0;
+  height: 50px;
+}
+.selection-couleur .picker-couleur .code-couleur.disable-picker input {
+  display: none;
 }
 .selection-couleur .picker-couleur .code-couleur legend {
   margin: 0 0 0 6px;
