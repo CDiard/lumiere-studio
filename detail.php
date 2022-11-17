@@ -13,7 +13,7 @@
 <body>
     <div class="content">
         <header>
-            <a href="#" class="bouton-retour">
+            <a href="index.php" class="bouton-retour">
                 <img src="assets/img/svg/arrow_retour.svg" alt>
             </a>
             <input type="text" name="nameLight" id="name-light" class="name-modif-light" placeholder="Nom de la lumière...">
@@ -67,6 +67,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="assets/js/slider.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/select.js"></script>
+    <script src="assets/js/color.js"></script>
 </body>
 </html>
