@@ -20,6 +20,10 @@ body {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .toggle:last-of-type {
   margin: 0;
