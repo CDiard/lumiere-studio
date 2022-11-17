@@ -256,6 +256,11 @@ header .name-modif-light::placeholder {
   border: 0;
 }
 
+.slider-detail {
+  position: relative !important;
+  margin-top: 25px;
+}
+
 h1 {
   color: #a5c9ca;
   margin: 0;
