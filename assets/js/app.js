@@ -18,10 +18,24 @@ $(document).ready(function() {
 
         var intensity255 = (intensity * 255) / 100;
 
-        fetch("http://localhost:8080/ajuster/1/" + colorPicker.color.red);
-        fetch("http://localhost:8080/ajuster/2/" + colorPicker.color.green);
-        fetch("http://localhost:8080/ajuster/3/" + colorPicker.color.blue);
-        fetch("http://localhost:8080/ajuster/5/" + intensity255);
+        data = {
+            1: colorPicker.color.red,
+            2: colorPicker.color.green,
+            3: colorPicker.color.blue,
+            5: intensity255
+        };
+
+        fetch("http://localhost:8080/ajuster", {
+            method: "POST",
+            headers: {
+                accept : "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then((resp) => {
+            console.log(resp);
+        }).then((truc) => {
+            console.log(truc);
+        });
     }
 
     //Iro.js
@@ -81,11 +95,10 @@ $(document).ready(function() {
 
     //Affichage code hexa
     reloadColor();
-    $("#pickerColor").mousemove(function() {
+    colorPicker.on('color:change', function() {
         reloadColor();
     });
-
-    $("#pickerIntensity").mousemove(function() {
+    intensityPicker.on('color:change', function() {
         reloadColor();
     });
 });

@@ -1,3 +1,7 @@
+<?php
+    require '.lib.inc.php';
+    
+?>
 <!doctype html>
 <html lang="fr">
 <head>
