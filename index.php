@@ -1,7 +1,8 @@
 <?php
 require '.lib.inc.php';
-
-
+$mabd = connexionBD();
+$lampes = getAllLampes($mabd);
+deconnexionBD($mabd);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -30,7 +31,24 @@ require '.lib.inc.php';
 			</label>
 		</div>
 	</nav>
-	<script src="assets/js/app.js"></script>
+	<main>
+		<!-- carte -->
+		<section>
+
+		</section>
+		<!-- lampes -->
+		<section> 
+			<?php foreach($lampes as $lampe) { ?>
+				<a href="detail.php?lampe=<?= $lampe['id'] ?>">
+					<div>
+						<p><?= $lampe['id'] ?></p>
+						<p><?= $lampe['name'] ?></p>
+					</div>
+				</a>
+			<?php } ?>
+		</section>
+	</main>
+	<!-- <script src="assets/js/app.js"></script> -->
 </body>
 
 </html>
