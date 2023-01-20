@@ -1,23 +1,23 @@
-$(document).ready(function() {
-    var nameLampeInput = $('#name-light');
+$(document).ready(function () {
+    var nameLampeInput = $("#name-light");
     nameLampeInput.change(() => {
         nameLampe = nameLampeInput.val();
         APIBDD();
     });
 
     //Sélecteur on off (menu)
-    $('header .check-state-on').css('display', 'none');
+    $("header .check-state-on").css("display", "none");
     $("header .toggle-input").prop("checked", false);
-    $('header .toggle-input').click(function() {
-        $('header .check-state-on').toggle();
-        $('header .check-state-off').toggle();
-    })
+    $("header .toggle-input").click(function () {
+        $("header .check-state-on").toggle();
+        $("header .check-state-off").toggle();
+    });
 
     //Fonction actualisation + appels API
     function reloadColor() {
         var hex = colorPicker.color.hexString;
-        $('.codeColor .inputColor').val(hex);
-        
+        $(".codeColor .inputColor").val(hex);
+
         var intensity = intensityPicker.color.value;
 
         valIntensity = (intensity * 255) / 100;
@@ -29,7 +29,7 @@ $(document).ready(function() {
         APIColor();
         APIBDD();
     }
-    
+
     function APIColor() {
         data = {};
 
@@ -41,14 +41,16 @@ $(document).ready(function() {
         fetch("http://localhost:8080/ajuster", {
             method: "POST",
             headers: {
-                accept : "application/json"
+                accept: "application/json",
             },
-            body: JSON.stringify(data)
-        }).then((resp) => {
-            console.log(resp);
-        }).then((truc) => {
-            console.log(truc);
-        });
+            body: JSON.stringify(data),
+        })
+            .then((resp) => {
+                console.log(resp);
+            })
+            .then((truc) => {
+                console.log(truc);
+            });
     }
 
     function APIBDD() {
@@ -61,80 +63,104 @@ $(document).ready(function() {
             valIntensity: valIntensity,
         };
 
-        currentURL = location.pathname.split('/');
+        currentURL = location.pathname.split("/");
         currentURL.pop();
-        currentURL.push('APIVal.php');
-        urlAPI = currentURL.join('/');
+        currentURL.push("APIVal.php");
+        urlAPI = currentURL.join("/");
 
         fetch(urlAPI, {
             method: "POST",
             headers: {
-                accept : "application/json"
+                accept: "application/json",
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
         });
     }
 
-
     // Initialisation du sélecteur de couleur
-    var colorPicker = new iro.ColorPicker('#pickerColor', {
+    var colorPicker = new iro.ColorPicker("#pickerColor", {
         width: 300,
-        color: 'rgb(' + valRed + ', ' + valGreen + ', ' + valBlue + ')',
-        layoutDirection: 'horizontal',
+        color: "rgb(" + valRed + ", " + valGreen + ", " + valBlue + ")",
+        layoutDirection: "horizontal",
         layout: [
             {
                 component: iro.ui.Slider,
                 options: {
-                    sliderType: 'saturation',
+                    sliderType: "saturation",
                     sliderSize: 35,
-                }
+                },
             },
             {
                 component: iro.ui.Wheel,
                 options: {
-                    sliderType: 'hue',
-                }
+                    sliderType: "hue",
+                },
             },
             {
                 component: iro.ui.Slider,
                 options: {
-                    sliderType: 'value',
+                    sliderType: "value",
                     sliderSize: 35,
-                }
+                },
             },
             {
                 component: iro.ui.Slider,
                 options: {
-                    sliderType: 'kelvin',
-                    layoutDirection: 'vertical',
+                    sliderType: "kelvin",
+                    layoutDirection: "vertical",
                     sliderSize: 35,
-                }
+                },
             },
-        ]
+        ],
     });
 
     // Initialisation d'intensité
-    var intensityPicker = new iro.ColorPicker('#pickerIntensity', {
+    var intensityPicker = new iro.ColorPicker("#pickerIntensity", {
         width: 300,
-        color: 'rgb(' + valIntensity + ', ' + valIntensity + ', ' + valIntensity + ')',
-        layoutDirection: 'vertical',
+        color:
+            "rgb(" +
+            valIntensity +
+            ", " +
+            valIntensity +
+            ", " +
+            valIntensity +
+            ")",
+        layoutDirection: "vertical",
         layout: [
             {
                 component: iro.ui.Slider,
                 options: {
-                    sliderType: 'value',
+                    sliderType: "value",
                     sliderSize: 35,
-                }
+                },
             },
-        ]
+        ],
     });
 
     //Affichage code hexa + envoie appel API
     reloadColor();
-    colorPicker.on('color:change', function() {
+    colorPicker.on("color:change", function () {
         reloadColor();
     });
-    intensityPicker.on('color:change', function() {
+    intensityPicker.on("color:change", function () {
+        reloadColor();
+    });
+
+    //Pour le responsive
+    $(window).resize(function () {
+        var width = $(window).width();
+        if (width < 500) {
+            colorPicker.resize(220);
+            intensityPicker.resize(220);
+        } else {
+            colorPicker.resize(300);
+            intensityPicker.resize(300);
+        }
+    });
+    
+    $(".code-couleur input[type=text]").change(function () {
+        var hexChange = $(".code-couleur .input-couleur").val();
+        colorPicker.color.hexString = hexChange;
         reloadColor();
     });
 });

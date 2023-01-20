@@ -18,8 +18,8 @@ $req->bindParam(6, $data['idLampe']);
 try {
     $resultat = $req->execute();
 } catch (PDOException $e) {
-    print "Erreur : ".$e->getMessage().'<br />';
+    print "Erreur : " . $e->getMessage() . '<br />';
     die();
 }
-    
+
 deconnexionBD($mabd);

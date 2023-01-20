@@ -7,6 +7,7 @@ if ($lampeId === null) {
 }
 $mabd = connexionBD();
 $lampe = getLampById($mabd, $lampeId);
+$lampes = getAllLampes($mabd);
 deconnexionBD($mabd);
 ?>
 <!doctype html>
@@ -22,6 +23,7 @@ deconnexionBD($mabd);
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <div class="content">
         <header>
@@ -44,7 +46,7 @@ deconnexionBD($mabd);
         <section class="selection-couleur">
             <div class="picker-couleur">
                 <!-- Ajouter/enlever la class disable-picker pour désactiver/activer le colorpicker -->
-                <div id="pickerColor" ></div><!--class="disable-picker"-->
+                <div id="pickerColor"></div><!--class="disable-picker"-->
                 <div id="pickerIntensity"></div>
                 <fieldset class="code-couleur"><!-- disable-picker -->
                     <legend>HEX</legend>
@@ -53,24 +55,15 @@ deconnexionBD($mabd);
                 </fieldset>
             </div>
         </section>
+        <!-- lampes -->
         <section class="bottom-wrapper slider-detail">
             <div class="slider">
-                <a class="slider__element" href="detail.php?name=test">
-                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Projecteur">
-                    <p class="light-name">Nom</p>
-                </a>
-                <a class="slider__element" href="detail.php?name=test">
-                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Projecteur">
-                    <p class="light-name">Nom</p>
-                </a>
-                <a class="slider__element" href="detail.php?name=test">
-                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Projecteur">
-                    <p class="light-name">Nom</p>
-                </a>
-                <a class="slider__element" href="detail.php?name=test">
-                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Projecteur">
-                    <p class="light-name">Nom</p>
-                </a>
+                <?php foreach ($lampes as $lampeList) { ?>
+                    <a class="slider__element" href="detail.php?lampe=<?= $lampeList['id'] ?>">
+                        <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Lampe <?= $lampeList['id'] ?>" />
+                        <p class="light-name"><?= $lampeList['name'] ?></p>
+                    </a>
+                <?php } ?>
             </div>
         </section>
     </div>
@@ -93,6 +86,7 @@ deconnexionBD($mabd);
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/select.js"></script>
-    <script src="assets/js/color.js"></script>
+    <!-- <script src="assets/js/color.js"></script> -->
 </body>
+
 </html>
