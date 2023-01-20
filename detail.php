@@ -58,6 +58,18 @@ deconnexionBD($mabd);
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script>
+        var idLampe = <?= $lampe[0]['id'] ?>;
+        var nameLampe = "<?= $lampe[0]['name'] ?>";
+        var channelRed = <?= $lampe[0]['red'] ?>;
+        var channelGreen = <?= $lampe[0]['green'] ?>;
+        var channelBlue = <?= $lampe[0]['blue'] ?>;
+        var valRed = <?= $lampe[0]['valRed'] ?>;
+        var valGreen = <?= $lampe[0]['valGreen'] ?>;
+        var valBlue = <?= $lampe[0]['valBlue'] ?>;
+        var channelIntensity = <?= $lampe[0]['intensity'] ?>;
+        var valIntensity = <?= $lampe[0]['valIntensity'] ?>;
+    </script>
     <script src="assets/js/app.js"></script>
 </body>
 

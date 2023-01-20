@@ -1,10 +1,7 @@
 <?php
-session_start();
+// session_start();
 
 require '.env.php';
-
-
-
 
 function connexionBD()
 {
@@ -12,6 +9,8 @@ function connexionBD()
     try {
         $mabd = new PDO('mysql:host=' . Host . ';port=' . Port . ';dbname=' . Database . ';charset=UTF8;', Login, Password);
         $mabd->query('SET NAMES utf8;');
+        // ! à retirer en prod
+        $mabd->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch (PDOException $e) {
         print "Erreur :" . $e->getMessage() . '<br />';
         die();
@@ -21,7 +20,7 @@ function connexionBD()
 
 function deconnexionBD($mabd)
 {
-    $mabd = null;
+    return $mabd = null;
 }
 
 function getAllLampes($mabd) {
@@ -60,8 +59,4 @@ function getLampById($mabd, int $id) {
         }
     }
     return $resultats;
-}
-
-function changeLampVal($mabd) {
-
 }

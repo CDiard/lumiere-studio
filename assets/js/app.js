@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    var nameLampeInput = $('#name-light');
+    nameLampeInput.change(() => {
+        nameLampe = nameLampeInput.val();
+        APIBDD();
+    });
+
     //Sélecteur on off (menu)
     $('header .check-state-on').css('display', 'none');
     $("header .toggle-input").prop("checked", false);
@@ -7,23 +13,30 @@ $(document).ready(function() {
         $('header .check-state-off').toggle();
     })
 
-    //Fonction actualisation
+    //Fonction actualisation + appels API
     function reloadColor() {
         var hex = colorPicker.color.hexString;
         $('.codeColor .inputColor').val(hex);
-        // var red = colorPicker.color.red; -> 255
-        // var green = colorPicker.color.green; -> 255
-        // var blue = colorPicker.color.green; -> 255
-        var intensity = intensityPicker.color.value;// -> 100
+        
+        var intensity = intensityPicker.color.value;
 
-        var intensity255 = (intensity * 255) / 100;
+        valIntensity = (intensity * 255) / 100;
 
-        data = {
-            1: colorPicker.color.red,
-            2: colorPicker.color.green,
-            3: colorPicker.color.blue,
-            5: intensity255
-        };
+        valRed = colorPicker.color.red;
+        valGreen = colorPicker.color.green;
+        valBlue = colorPicker.color.blue;
+
+        APIColor();
+        APIBDD();
+    }
+    
+    function APIColor() {
+        data = {};
+
+        data[channelRed] = valRed;
+        data[channelGreen] = valGreen;
+        data[channelBlue] = valBlue;
+        data[channelIntensity] = valIntensity;
 
         fetch("http://localhost:8080/ajuster", {
             method: "POST",
@@ -38,10 +51,35 @@ $(document).ready(function() {
         });
     }
 
-    //Iro.js
+    function APIBDD() {
+        data = {
+            name: nameLampe,
+            idLampe: idLampe,
+            valRed: valRed,
+            valGreen: valGreen,
+            valBlue: valBlue,
+            valIntensity: valIntensity,
+        };
+
+        currentURL = location.pathname.split('/');
+        currentURL.pop();
+        currentURL.push('APIVal.php');
+        urlAPI = currentURL.join('/');
+
+        fetch(urlAPI, {
+            method: "POST",
+            headers: {
+                accept : "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+    }
+
+
+    // Initialisation du sélecteur de couleur
     var colorPicker = new iro.ColorPicker('#pickerColor', {
         width: 300,
-        color: "#ffffff",
+        color: 'rgb(' + valRed + ', ' + valGreen + ', ' + valBlue + ')',
         layoutDirection: 'horizontal',
         layout: [
             {
@@ -75,9 +113,10 @@ $(document).ready(function() {
         ]
     });
 
+    // Initialisation d'intensité
     var intensityPicker = new iro.ColorPicker('#pickerIntensity', {
         width: 300,
-        color: "#ffffff",
+        color: 'rgb(' + valIntensity + ', ' + valIntensity + ', ' + valIntensity + ')',
         layoutDirection: 'vertical',
         layout: [
             {
@@ -90,10 +129,7 @@ $(document).ready(function() {
         ]
     });
 
-    //Pour le responsive
-    //colorPicker.resize(200);
-
-    //Affichage code hexa
+    //Affichage code hexa + envoie appel API
     reloadColor();
     colorPicker.on('color:change', function() {
         reloadColor();

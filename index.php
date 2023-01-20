@@ -41,8 +41,8 @@ deconnexionBD($mabd);
 			<?php foreach($lampes as $lampe) { ?>
 				<a href="detail.php?lampe=<?= $lampe['id'] ?>">
 					<div>
-						<p><?= $lampe['id'] ?></p>
 						<p><?= $lampe['name'] ?></p>
+						<img src="assets/img/Group.svg" alt="lampe <?= $lampe['id'] ?>">
 					</div>
 				</a>
 			<?php } ?>
