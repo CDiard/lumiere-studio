@@ -1,3 +1,16 @@
+@mixin pictoSelectColor($url) {
+  content: '';
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
 body {
   background-color: $dark;
 }
@@ -48,6 +61,20 @@ header {
     align-items: center;
 
     #pickerColor {
+      &.disable-picker {
+        position: relative;
+        filter: blur(5px) saturate(55%);
+      }
+      &.disable-picker::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        cursor: not-allowed;
+      }
       .IroWheel {
         margin-left: 20px !important;
       }
@@ -61,11 +88,87 @@ header {
         margin-right: auto !important;
         margin-left: auto !important;
         margin-top: 50px !important;
+
+        &::before {
+          @include pictoSelectColor("../img/svg/sun.svg");
+          left: -10px;
+          transform: translate(-100%, -50%);
+        }
+        &::after {
+          @include pictoSelectColor("../img/svg/moon.svg");
+          right: -10px;
+          transform: translate(100%, -50%);
+        }
       }
     }
 
     #pickerIntensity {
       margin: 25px 0 0 0;
+      position: relative;
+
+      &::before {
+        @include pictoSelectColor("../img/svg/flash_off.svg");
+        left: -10px;
+        transform: translate(-100%, -50%);
+      }
+      &::after {
+        @include pictoSelectColor("../img/svg/flash_on.svg");
+        right: -10px;
+        transform: translate(100%, -50%);
+      }
+    }
+
+    .code-couleur {
+      width: 145px;
+      margin: 25px 0 0 0;
+      border: 2px solid #FFFFFF;
+      border-radius: 10px;
+      background-color: transparent;
+      padding: 0 5px 0 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &.disable-picker {
+        opacity: 0;
+        height: 50px;
+
+        input {
+          display: none;
+
+        }
+      }
+      legend {
+        margin: 0 0 0 6px;
+        padding: 0 5px;
+        @include fontRoboto;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #FFFFFF;
+      }
+      label {
+        display: none;
+      }
+      input {
+        width: 100%;
+        @include fontRoboto;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0 0 5px 0;
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+      }
     }
   }
+}
+
+.slider-detail {
+  position: relative !important;
+  margin-top: 25px;
 }

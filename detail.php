@@ -19,9 +19,9 @@ deconnexionBD($mabd);
     <title>Lumière du studio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
     <div class="content">
         <header>
@@ -43,16 +43,35 @@ deconnexionBD($mabd);
         </header>
         <section class="selection-couleur">
             <div class="picker-couleur">
-                <div id="pickerColor"></div>
+                <!-- Ajouter/enlever la class disable-picker pour désactiver/activer le colorpicker -->
+                <div id="pickerColor" ></div><!--class="disable-picker"-->
                 <div id="pickerIntensity"></div>
-                <div class="codeColor">
-                    <label for="inputColor">HEX</label>
-                    <input type="text" name="input_color" id="inputColor" class="inputColor">
-                </div>
+                <fieldset class="code-couleur"><!-- disable-picker -->
+                    <legend>HEX</legend>
+                    <label for="input-couleur">Votre couleur</label>
+                    <input type="text" name="input_color" id="input-couleur" class="input-couleur">
+                </fieldset>
             </div>
         </section>
-        <section>
-
+        <section class="bottom-wrapper slider-detail">
+            <div class="slider">
+                <a class="slider__element" href="detail.php?name=test">
+                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Projecteur">
+                    <p class="light-name">Nom</p>
+                </a>
+                <a class="slider__element" href="detail.php?name=test">
+                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Projecteur">
+                    <p class="light-name">Nom</p>
+                </a>
+                <a class="slider__element" href="detail.php?name=test">
+                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Projecteur">
+                    <p class="light-name">Nom</p>
+                </a>
+                <a class="slider__element" href="detail.php?name=test">
+                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Projecteur">
+                    <p class="light-name">Nom</p>
+                </a>
+            </div>
         </section>
     </div>
 
@@ -71,6 +90,9 @@ deconnexionBD($mabd);
         var valIntensity = <?= $lampe[0]['valIntensity'] ?>;
     </script>
     <script src="assets/js/app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/select.js"></script>
+    <script src="assets/js/color.js"></script>
 </body>
-
 </html>

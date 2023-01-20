@@ -14,6 +14,11 @@ deconnexionBD($mabd);
 	<title>Lumière du studio</title>
 
 	<link rel="stylesheet" href="assets/css/style.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+		/>
 </head>
 
 <body id="main">
@@ -22,10 +27,17 @@ deconnexionBD($mabd);
 		<div class="nav-main__left">
 			<a class="btn-add" href="#">+</a>
 			<label class="toggle" for="boutonOnOff">
-				<input type="checkbox" class="toggle-input" id="boutonOnOff" />
+				<input
+					type="checkbox"
+					class="toggle-input"
+					id="boutonOnOff"
+				/>
 				<span class="toggle-track">
 					<span class="toggle-indicator">
-						<span class="check-state"> ON </span>
+						<span class="check-state">
+							<span class="check-state-on">ON</span>
+							<span class="check-state-off">OFF</span>
+						</span>
 					</span>
 				</span>
 			</label>
@@ -33,22 +45,36 @@ deconnexionBD($mabd);
 	</nav>
 	<main>
 		<!-- carte -->
-		<section>
-
+		<section class="carte-wrapper">
+			<div class="carte">CARTE<br />width : 100wv<br />height : 100%</div>
 		</section>
+
 		<!-- lampes -->
-		<section> 
-			<?php foreach($lampes as $lampe) { ?>
-				<a href="detail.php?lampe=<?= $lampe['id'] ?>">
-					<div>
-						<p><?= $lampe['name'] ?></p>
-						<img src="assets/img/Group.svg" alt="lampe <?= $lampe['id'] ?>">
-					</div>
-				</a>
-			<?php } ?>
+		<section class="bottom-wrapper"> 
+			<div class="slider">
+				<?php foreach($lampes as $lampe) { ?>
+					<a class="slider__element" href="detail.php?lampe=<?= $lampe['id'] ?>">
+						<img
+							class="light-icon"
+							src="assets/img/svg/noun-light.svg"
+							alt="Lampe <?= $lampe['id'] ?>"
+						/>
+						<p class="light-name"><?= $lampe['name'] ?></p>
+					</a>
+				<?php } ?>
+			</div>
 		</section>
 	</main>
-	<!-- <script src="assets/js/app.js"></script> -->
-</body>
-
+		<script
+			src="https://code.jquery.com/jquery-3.6.1.min.js"
+			integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+			crossorigin="anonymous"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+		></script>
+        <script src="assets/js/select.js"></script>
+		<script src="assets/js/slider.js"></script>
+	</body>
 </html>
