@@ -38,19 +38,21 @@ $(document).ready(function () {
         data[channelBlue] = valBlue;
         data[channelIntensity] = valIntensity;
 
-        fetch("http://localhost:8080/ajuster", {
+        console.log(data);
+
+        fetch("http://192.168.62.158:8080/ajuster", {
             method: "POST",
             headers: {
                 accept: "application/json",
             },
             body: JSON.stringify(data),
-        })
-            .then((resp) => {
-                console.log(resp);
-            })
-            .then((truc) => {
-                console.log(truc);
-            });
+        }).then((resp) => {
+            console.log(resp);
+        });
+        // fetch("http://192.168.62.158:8080/ajuster/" + channelRed + "/" + valRed).then(console.log('red'));
+        // fetch("http://192.168.62.158:8080/ajuster/" + channelBlue + "/" + valBlue).then(console.log('blue'));
+        // fetch("http://192.168.62.158:8080/ajuster/" + channelGreen + "/" + valGreen).then(console.log('green'));
+        // fetch("http://192.168.62.158:8080/ajuster/" + channelIntensity + "/" + valIntensity).then(console.log('intensity'));
     }
 
     function APIBDD() {
@@ -157,7 +159,7 @@ $(document).ready(function () {
             intensityPicker.resize(300);
         }
     });
-    
+
     $(".code-couleur input[type=text]").change(function () {
         var hexChange = $(".code-couleur .input-couleur").val();
         colorPicker.color.hexString = hexChange;

@@ -74,6 +74,7 @@ deconnexionBD($mabd);
         var idLampe = <?= $lampe[0]['id'] ?>;
         var nameLampe = "<?= $lampe[0]['name'] ?>";
         var channelRed = <?= $lampe[0]['red'] ?>;
+        console.log(channelRed);
         var channelGreen = <?= $lampe[0]['green'] ?>;
         var channelBlue = <?= $lampe[0]['blue'] ?>;
         var valRed = <?= $lampe[0]['valRed'] ?>;
