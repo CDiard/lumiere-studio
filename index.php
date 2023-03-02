@@ -38,7 +38,21 @@ deconnexionBD($mabd);
 	<main>
 		<!-- carte -->
 		<section class="carte-wrapper">
-			<div class="carte">CARTE<br />width : 100wv<br />height : 100%</div>
+			<div class="carte">
+				<svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 300">
+					<defs>
+						<style>
+							.cls-1{fill:#2c3333;}
+						</style>
+					</defs>
+					<path class="cls-1" d="m348,4v292H4v-114.79h47.98V4h296.02m4-4H47.98v177.21H0v122.79h352V0h0Z"/>
+					<?php foreach($lampes as $lampe) { ?>
+						<a xlink:href="detail.php?lampe=<?= $lampe['id'] ?>">
+							<image xlink:href="assets/img/svg/lampe.svg" x="<?= $lampe['posX'] ?>" y="<?= $lampe['posY'] ?>" height="40" width="40" alt="Lampe <?= $lampe['id'] ?>" />
+						</a>
+					<?php } ?>
+				</svg>
+			</div>
 		</section>
 
 		<!-- lampes -->
