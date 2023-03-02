@@ -16,7 +16,7 @@ $(document).ready(function () {
     //Fonction actualisation + appels API
     function reloadColor() {
         var hex = colorPicker.color.hexString;
-        $(".codeColor .inputColor").val(hex);
+        $(".code-couleur .input-couleur").val(hex);
 
         var intensity = intensityPicker.color.value;
 
@@ -40,7 +40,9 @@ $(document).ready(function () {
 
         console.log(data);
 
-        fetch("http://192.168.62.158:8080/ajuster", {
+        //192.168.62.158
+        // ! Adresse ip de l'api (raspberry)
+        fetch("http://localhost:8080/", {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -49,10 +51,10 @@ $(document).ready(function () {
         }).then((resp) => {
             console.log(resp);
         });
-        // fetch("http://192.168.62.158:8080/ajuster/" + channelRed + "/" + valRed).then(console.log('red'));
-        // fetch("http://192.168.62.158:8080/ajuster/" + channelBlue + "/" + valBlue).then(console.log('blue'));
-        // fetch("http://192.168.62.158:8080/ajuster/" + channelGreen + "/" + valGreen).then(console.log('green'));
-        // fetch("http://192.168.62.158:8080/ajuster/" + channelIntensity + "/" + valIntensity).then(console.log('intensity'));
+        // // fetch("http://192.168.62.158:8080/ajuster/" + channelRed + "/" + valRed).then(console.log('red'));
+        // // fetch("http://192.168.62.158:8080/ajuster/" + channelBlue + "/" + valBlue).then(console.log('blue'));
+        // // fetch("http://192.168.62.158:8080/ajuster/" + channelGreen + "/" + valGreen).then(console.log('green'));
+        // // fetch("http://192.168.62.158:8080/ajuster/" + channelIntensity + "/" + valIntensity).then(console.log('intensity'));
     }
 
     function APIBDD() {
