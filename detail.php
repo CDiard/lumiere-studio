@@ -81,6 +81,7 @@ deconnexionBD($mabd);
         var valBlue = <?= $lampe[0]['valBlue'] ?>;
         var channelIntensity = <?= $lampe[0]['intensity'] ?>;
         var valIntensity = <?= $lampe[0]['valIntensity'] ?>;
+        var url = "<?= ServeurDMX ?>";
     </script>
     <script src="assets/js/app.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

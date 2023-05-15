@@ -1,95 +1,98 @@
 h1 {
-	color: $clr-highlight;
-	margin: 0;
+    color: $clr-highlight;
+    margin: 0;
 }
 
 .nav-main {
-	display: flex;
-	justify-content: space-between;
-	padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
 .nav-main__left {
-	display: flex;
-	gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .btn-add {
-	background-color: $clr-highlight;
-	border-radius: 50%;
-	color: #fff;
-	font-size: 2.5rem;
-	text-decoration: none;
-	height: 2rem;
-	width: 2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    background-color: $clr-highlight;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2.5rem;
+    text-decoration: none;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carte {
-	background-color: $clr-content-bg;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 2rem;
+    background-color: $clr-content-bg;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    svg {
+        margin: 10px;
+    }
 }
 
 // Slider
 
 .slick-track {
-	padding-block: 2rem;
+    padding-block: 2rem;
 }
 
 .slider__element {
-	display: block;
-	background-color: $clr-content-bg;
-	width: 33vw;
-	margin-inline: 1.5rem;
-	margin-block: 1rem;
-	border-radius: 1rem;
-	transition: all 0.5s;
-	text-decoration: none;
-	color: #000;
-	@media screen and (min-width: 768px) {
-		margin-inline: 2.5rem;
-	}
-	p::after {
-		content: "";
-		display: block;
-		opacity: 0;
-		transition: opacity 0.5s, margin-top 0.5s;
-	}
+    display: block;
+    background-color: $clr-content-bg;
+    width: 33vw;
+    margin-inline: 1.5rem;
+    margin-block: 1rem;
+    border-radius: 1rem;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: #000;
+    @media screen and (min-width: 768px) {
+        margin-inline: 2.5rem;
+    }
+    p::after {
+        content: "";
+        display: block;
+        opacity: 0;
+        transition: opacity 0.5s, margin-top 0.5s;
+    }
 }
 
 .slick-center {
-	transform: scale(1.25);
-	padding: 1rem 0;
-	margin-block: 0;
-	p::after {
-		width: 50%;
-		height: 1px;
-		background-color: #000;
-		margin-inline: 25%;
-		margin-top: 0.25rem;
-		opacity: 1;
-	}
+    transform: scale(1.25);
+    padding: 1rem 0;
+    margin-block: 0;
+    p::after {
+        width: 50%;
+        height: 1px;
+        background-color: #000;
+        margin-inline: 25%;
+        margin-top: 0.25rem;
+        opacity: 1;
+    }
 }
 
 .light-icon {
-	width: 150px;
-	max-width: 100%;
-	margin-inline: auto;
+    width: 150px;
+    max-width: 100%;
+    margin-inline: auto;
 }
 
 .light-name {
-	text-align: center;
+    text-align: center;
 }
 
 .bottom-wrapper {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

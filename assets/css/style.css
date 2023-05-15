@@ -1,8 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -19,8 +17,11 @@ body {
   display: flex;
   font-weight: 700;
   margin-bottom: 16px;
+  width: -moz-min-content;
   width: min-content;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .toggle:last-of-type {
   margin: 0;
@@ -30,7 +31,8 @@ body {
   height: 1px;
   width: 1px;
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
@@ -127,6 +129,13 @@ header .name-modif-light {
   font-size: 16px;
   line-height: 19px;
   color: #ffffff;
+}
+header .name-modif-light::-moz-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.6509803922);
 }
 header .name-modif-light::placeholder {
   font-family: "Roboto", sans-serif;
@@ -320,6 +329,9 @@ h1 {
   align-items: center;
   margin-bottom: 2rem;
 }
+.carte svg {
+  margin: 10px;
+}
 
 .slick-track {
   padding-block: 2rem;
@@ -376,6 +388,4 @@ h1 {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

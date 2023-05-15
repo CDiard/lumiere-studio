@@ -42,7 +42,7 @@ $(document).ready(function () {
 
         //192.168.62.158
         // ! Adresse ip de l'api (raspberry)
-        fetch("http://localhost:8080/", {
+        fetch(url, {
             method: "POST",
             headers: {
                 accept: "application/json",
