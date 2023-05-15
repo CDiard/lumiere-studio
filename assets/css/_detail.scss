@@ -28,26 +28,34 @@ header {
     width: 26px;
     height: auto;
   }
-  .name-modif-light {
-    width: 50%;
-    min-width: 170px;
-    height: 24px;
-    border: 0;
-    outline: 0;
-    border-bottom: 2px solid #A5C9CA;
-    background-color: transparent;
-    @include fontRoboto;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: $light;
 
-    &::placeholder {
+  .container-name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .name-modif-light {
+      width: 50%;
+      min-width: 170px;
+      height: 24px;
+      border: 0;
+      outline: 0;
+      border-bottom: 2px solid #A5C9CA;
+      background-color: transparent;
       @include fontRoboto;
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
-      color: #FFFFFFA6;
+      color: $light;
+
+      &::placeholder {
+        @include fontRoboto;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFFA6;
+      }
     }
   }
 }
@@ -65,6 +73,7 @@ header {
         position: relative;
         filter: blur(5px) saturate(55%);
       }
+
       &.disable-picker::after {
         content: '';
         width: 100%;
@@ -75,15 +84,19 @@ header {
         z-index: 1;
         cursor: not-allowed;
       }
+
       .IroWheel {
         margin-left: 20px !important;
       }
+
       .IroSlider {
         margin-left: 20px !important;
       }
+
       .IroSlider:first-child {
         margin-left: 0 !important;
       }
+
       .IroSlider:last-child {
         margin-right: auto !important;
         margin-left: auto !important;
@@ -94,6 +107,7 @@ header {
           left: -10px;
           transform: translate(-100%, -50%);
         }
+
         &::after {
           @include pictoSelectColor("../img/svg/moon.svg");
           right: -10px;
@@ -111,6 +125,7 @@ header {
         left: -10px;
         transform: translate(-100%, -50%);
       }
+
       &::after {
         @include pictoSelectColor("../img/svg/flash_on.svg");
         right: -10px;
@@ -139,6 +154,7 @@ header {
 
         }
       }
+
       legend {
         margin: 0 0 0 6px;
         padding: 0 5px;
@@ -148,9 +164,11 @@ header {
         line-height: 15px;
         color: #FFFFFF;
       }
+
       label {
         display: none;
       }
+
       input {
         width: 100%;
         @include fontRoboto;

@@ -30,18 +30,9 @@ deconnexionBD($mabd);
             <a href="index.php" class="bouton-retour">
                 <img src="assets/img/svg/arrow_retour.svg" alt>
             </a>
-            <input type="text" name="nameLight" id="name-light" class="name-modif-light" placeholder="Nom de la lumière..." value="<?= $lampe[0]['name'] ?>">
-            <label class="toggle" for="boutonOnOff">
-                <input type="checkbox" class="toggle-input" id="boutonOnOff">
-                <span class="toggle-track">
-                    <span class="toggle-indicator">
-                        <span class="check-state">
-                            <span class="check-state-on">ON</span>
-                            <span class="check-state-off">OFF</span>
-                        </span>
-                    </span>
-                </span>
-            </label>
+            <div class="container-name">
+                <input type="text" name="nameLight" id="name-light" class="name-modif-light" placeholder="Nom de la lumière..." value="<?= $lampe[0]['name'] ?>">
+            </div>
         </header>
         <section class="selection-couleur">
             <div class="picker-couleur">
@@ -87,7 +78,6 @@ deconnexionBD($mabd);
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/select.js"></script>
-    <!-- <script src="assets/js/color.js"></script> -->
 </body>
 
 </html>
