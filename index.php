@@ -20,20 +20,6 @@ deconnexionBD($mabd);
 <body id="main">
 	<nav class="nav-main">
 		<h1>Studio</h1>
-		<div class="nav-main__left">
-			<a class="btn-add" href="#">+</a>
-			<label class="toggle" for="boutonOnOff">
-				<input type="checkbox" class="toggle-input" id="boutonOnOff" />
-				<span class="toggle-track">
-					<span class="toggle-indicator">
-						<span class="check-state">
-							<span class="check-state-on">ON</span>
-							<span class="check-state-off">OFF</span>
-						</span>
-					</span>
-				</span>
-			</label>
-		</div>
 	</nav>
 	<main>
 		<!-- carte -->

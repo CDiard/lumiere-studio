@@ -83,7 +83,7 @@ $(document).ready(function () {
 
     // Initialisation du sélecteur de couleur
     var colorPicker = new iro.ColorPicker("#pickerColor", {
-        width: 300,
+        width: 220,
         color: "rgb(" + valRed + ", " + valGreen + ", " + valBlue + ")",
         layoutDirection: "horizontal",
         layout: [
@@ -120,7 +120,7 @@ $(document).ready(function () {
 
     // Initialisation d'intensité
     var intensityPicker = new iro.ColorPicker("#pickerIntensity", {
-        width: 300,
+        width: 220,
         color:
             "rgb(" +
             valIntensity +
@@ -151,7 +151,7 @@ $(document).ready(function () {
     });
 
     //Pour le responsive
-    $(window).resize(function () {
+    function responsive() {
         var width = $(window).width();
         if (width < 500) {
             colorPicker.resize(220);
@@ -160,6 +160,12 @@ $(document).ready(function () {
             colorPicker.resize(300);
             intensityPicker.resize(300);
         }
+    }
+
+    responsive();
+
+    $(window).resize(function () {
+        responsive();
     });
 
     $(".code-couleur input[type=text]").change(function () {
