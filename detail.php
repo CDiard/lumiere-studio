@@ -58,12 +58,18 @@ deconnexionBD($mabd);
         <!-- lampes -->
         <section class="bottom-wrapper slider-detail">
             <div class="slider">
-                <?php foreach ($lampes as $lampeList) { ?>
-                    <a class="slider__element" href="detail.php?lampe=<?= $lampeList['id'] ?>">
-                        <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Lampe <?= $lampeList['id'] ?>" />
-                        <p class="light-name"><?= $lampeList['name'] ?></p>
-                    </a>
-                <?php } ?>
+                <a class="slider__element" href="detail.php?lampe=<?= $lampe[0]['id'] ?>">
+                    <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Lampe <?= $lampe[0]['id'] ?>" />
+                    <p class="light-name"><?= $lampe[0]['name'] ?></p>
+                </a>
+                <?php foreach ($lampes as $lampeList) { 
+                    if ($lampeList['id'] !== $lampe[0]['id']) { ?>
+                        <a class="slider__element" href="detail.php?lampe=<?= $lampeList['id'] ?>">
+                            <img class="light-icon" src="assets/img/svg/noun-light.svg" alt="Lampe <?= $lampeList['id'] ?>" />
+                            <p class="light-name"><?= $lampeList['name'] ?></p>
+                        </a>
+                    <?php } 
+                } ?>
             </div>
         </section>
     </div>
